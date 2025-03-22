@@ -60,6 +60,12 @@ body {
   }
 }
 
+@media (max-width: 479px) {
+  .advice q {
+    font-size: 20px;
+  }
+}
+
 .advice .lines {
   width: 100%;
   display: flex;
