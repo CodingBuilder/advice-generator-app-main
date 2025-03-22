@@ -1,0 +1,138 @@
+body {
+  background-color: hsl(218, 23%, 16%);
+  font-family: "Manrope", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --adviceColor: hsl(193, 38%, 86%);
+  --adviceId: hsl(150, 100%, 66%);
+}
+
+.advice {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 585px;
+  height: 400px;
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 15px;
+  text-align: center;
+  padding: 60px 30px;
+}
+
+@media (max-width: 768px) {
+  .advice {
+    width: 450px;
+  }
+}
+
+@media (max-width: 479px) {
+  .advice {
+    width: 300px;
+  }
+}
+
+.advice .id {
+  display: block;
+  color: var(--adviceId);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.advice q {
+  color: var(--adviceColor);
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .advice q {
+    font-size: 25px;
+  }
+}
+
+.advice .lines {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.advice .lines span {
+  flex-basis: 40%;
+  height: 1px;
+  background-color: hsl(217, 19%, 38%);
+  position: relative;
+}
+
+.advice .lines span:first-child::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  border-radius: 33%;
+  background-color: var(--adviceColor);
+  top: 50%;
+  transform: translateY(-50%);
+  right: -45px;
+}
+
+.advice .lines span:last-child::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  border-radius: 33%;
+  background-color: var(--adviceColor);
+  top: 50%;
+  transform: translateY(-50%);
+  left: -45px;
+}
+
+@media (max-width: 768px) {
+  .advice .lines span:first-child::before {
+    right: -55px;
+  }
+  .advice .lines span:last-child::before {
+    left: -55px;
+  }
+}
+
+@media (max-width: 479px) {
+  .advice .lines span:first-child::before {
+    right: -40px;
+  }
+  .advice .lines span:last-child::before {
+    left: -40px;
+  }
+}
+
+.advice .dice {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -32.5px;
+  background-color: var(--adviceId);
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.advice .dice:hover {
+  box-shadow: 0 0 40px 3px var(--adviceId);
+}
